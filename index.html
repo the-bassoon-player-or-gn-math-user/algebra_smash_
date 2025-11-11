@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>algebra_smash_</title>
+<style>
+  body {
+    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0b1a3a 0%, #000000 100%);
+    color: #cfd8dc;
+    display: flex; flex-direction: column; min-height: 100vh;
+  }
+  header {
+    background-color: #001f4d;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #cfd8dc;
+    letter-spacing: 1.3px;
+    user-select: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  button#settingsToggle {
+    background: transparent;
+    border: 2px solid #aad4ff;
+    border-radius: 5px;
+    color: #aad4ff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.7rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  button#settingsToggle:hover, button#settingsToggle:focus {
+    background-color: #0050e6;
+    color: #f0f9ff;
+    outline: none;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    padding: 1.5rem 2rem;
+    gap: 2rem;
+    background: #00102e;
+  }
+  section.games {
+    flex: 0 0 280px;
+    background-color: #001a40;
+    border-radius: 8px;
+    box-shadow: inset 0 0 12px #0009;
+    padding: 1rem 1.2rem;
+  }
+  section.games h2 {
+    margin-top: 0; margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #aad4ff;
+  }
+  ul.game-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.game-list li {
+    margin-bottom: 0.8rem;
+  }
+  ul.game-list a {
+    display: block;
+    width: 100%;
+    background-color: #002a70;
+    border: 1.5px solid #0044b8;
+    border-radius: 5px;
+    color: #c7d8ff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  ul.game-list a:hover, ul.game-list a:focus {
+    background-color: #0050e6;
+    border-color: #a3c3ff;
+    outline: none;
+    color: #f0f9ff;
+  }
+  section.viewer {
+    flex: 1;
+    background-color: #000a1f;
+    border-radius: 8px;
+    box-shadow: inset 0 0 18px #001822;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #6699ff99;
+    font-size: 1.2rem;
+    user-select: none;
+  }
+
+  /* Settings Panel */
+  #settingsPanel {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    background: #002654;
+    border-radius: 8px;
+    box-shadow: 0 0 16px #001a50cc;
+    padding: 1rem 1.2rem;
+    color: #b3d0ff;
+    font-weight: 600;
+    font-family: inherit;
+    display: none;
+    z-index: 1000;
+  }
+  #settingsPanel label {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  #settingsPanel input[type="text"] {
+    width: 100%;
+    border-radius: 4px;
+    border: 1.5px solid #004a99;
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #001f47;
+    color: #d8e6ff;
+    transition: border-color 0.2s;
+  }
+  #settingsPanel input[type="text"]:focus {
+    outline: none;
+    border-color: #a2c4ff;
+    background-color: #003366;
+    color: #e0f0ff;
+  }
+  #settingsClose {
+    margin-top: 1rem;
+    background: #004a99;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: #c7d8ff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+  #settingsClose:hover, #settingsClose:focus {
+    background-color: #0066ff;
+    outline: none;
+    color: #fff;
+  }
+
+  footer {
+    text-align: center;
+    background: #001832;
+    color: #5e7ab8;
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+<header>
+  algebra_smash_
+  <button id="settingsToggle" aria-expanded="false" aria-controls="settingsPanel">Settings ⚙️</button>
+</header>
+<main>
+  <section class="games" aria-label="Game list">
+    <h2>Games</h2>
+    <ul class="game-list">
+      <li><a href="https://cdpn.io/pen/debug/jEWpvaG?authentication_hash=dGMXWRWVXEwk" target="_blank" rel="noopener noreferrer">buckshot roulette</a></li>
+      <li><a href="https://cdpn.io/pen/debug/yyexOqW?authentication_hash=YvMgOWOoPKRM" target="_blank" rel="noopener noreferrer">people playground</a></li>
+      <li><a href="https://cdpn.io/pen/debug/jEWpvxY?authentication_hash=PNrvYmYpLagM" target="_blank" rel="noopener noreferrer">Minecraft v1.12.2</a></li>
+      <li><a href="https://cdpn.io/pen/debug/azdabxY?authentication_hash=VJMxxdxpZabM" target="_blank" rel="noopener noreferrer">granny 1</a></li>
+      <li><a href="https://cdpn.io/pen/debug/MYKxgZE?authentication_hash=dGrXWRWVXPLM" target="_blank" rel="noopener noreferrer">kindergarten 1</a></li>
+      <li><a href="https://cdpn.io/pen/debug/QwyRPNM?authentication_hash=xnkabWbEdQzM" target="_blank" rel="noopener noreferrer">cookie clicker</a></li>
+    </ul>
+  </section>
+  <section class="viewer" aria-label="Instructions">
+    <p>Click a game to open it in a new tab.</p>
+    <p>Open <strong>Settings</strong> to change the browser tab title.</p>
+  </section>
+</main>
+
+<!-- Settings Panel -->
+<div id="settingsPanel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" tabindex="-1">
+  <h2 id="settingsTitle">Settings</h2>
+  <label for="tabTitleInput">Tab Title:</label>
+  <input type="text" id="tabTitleInput" placeholder="Enter new tab title" autocomplete="off" aria-describedby="tabTitleHelp" />
+  <small id="tabTitleHelp" style="color:#88aaff; display:block; margin-top: 0.2rem;">Changes document tab title dynamically.</small>
+  <button id="settingsClose" type="button">Close</button>
+</div>
+
+<footer>© algebra_smash_ 2024</footer>
+
+<script>
+  const settingsToggle = document.getElementById("settingsToggle");
+  const settingsPanel = document.getElementById("settingsPanel");
+  const settingsClose = document.getElementById("settingsClose");
+  const tabTitleInput = document.getElementById("tabTitleInput");
+
+  // Show settings panel
+  settingsToggle.addEventListener("click", () => {
+    const isExpanded = settingsToggle.getAttribute("aria-expanded") === "true";
+    if (isExpanded) {
+      closeSettings();
+    } else {
+      openSettings();
+    }
+  });
+
+  // Close button in panel
+  settingsClose.addEventListener("click", () => {
+    closeSettings();
+  });
+
+  // Close settings when pressing Escape key inside panel
+  settingsPanel.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      closeSettings();
+      settingsToggle.focus();
+    }
+  });
+
+  function openSettings() {
+    settingsPanel.style.display = "block";
+    settingsToggle.setAttribute("aria-expanded", "true");
+    tabTitleInput.value = document.title === "algebra_smash_" ? "" : document.title;
+    tabTitleInput.focus();
+  }
+
+  function closeSettings() {
+    settingsPanel.style.display = "none";
+    settingsToggle.setAttribute("aria-expanded", "false");
+  }
+
+  // Change tab title based on input
+  tabTitleInput.addEventListener("input", () => {
+    const val = tabTitleInput.value.trim();
+    document.title = val || "algebra_smash_";
+  });
+
+  // Set initial tab title
+  document.title = "algebra_smash_";
+</script>
+</body>
+</html>
